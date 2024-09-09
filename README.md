@@ -7,13 +7,13 @@ CEOS 20th BE Study - Spring Tutorial
   
   - 객체의 생성과 관리를 개발자가 하는 것이 아니라 프레임워크가 대신하는 것
   - 자바 코드를 작성해 객체를 생성할 때, 객체가 필요한 곳에서 직접 생성했었음
-    ```
+    ```java
     public class A {
 	b = new B(); //클래스 A에서 new 키워드로 클래스 B의 객체를 생성
     }
     ```
   - 제어의 역전은 외부에서 관리하는 객체를 가져와 사용하는 것
-    ```
+    ```java
     pubic class A {
 	private B b; //코드에서 객체를 생성하지 않음. 어디선가 받아온 객체를 b에 할당
     }
@@ -24,7 +24,7 @@ CEOS 20th BE Study - Spring Tutorial
     - 제어의 역전을 구현하기 위해 사용하는 방법
     - 어떤 클래스가 다른 클래스에 의존한다는 뜻
     - 외부에서 객체를 주입받아 사용하는 것
-  ```
+  ```java
   public class A {
 	//A에서 B를 주입받음
 	@Autowired
@@ -47,7 +47,7 @@ CEOS 20th BE Study - Spring Tutorial
   - e.g. MyBean이라는 클래스에 `@Component` 애너테이션을 붙이면 MyBean 클래스가 빈으로 등록됨 
     
     → 이후 스프링 컨테이너에서 이 클래스를 관리함. 이때 빈의 이름은 클래스명의 첫 글자를 소문자로 바꿔 관리
-  ```
+  ```java
   @Component
   public class MyBean{
   }
@@ -100,7 +100,7 @@ CEOS 20th BE Study - Spring Tutorial
 - 주로 컴파일 시간이나 런타임에 해석되어 특별한 동작을 유도하는 데 사용됨
 - spring 프레임워크에서는 이러한 어노테이션을 적극적으로 활용해 bean을 등록하거나 의존성 주입을 관리
 e.g.
-```
+```java
 // 어노테이션 정의
 @Retention(RetentionPolicy.RUNTIME)  // 런타임 시점에 어노테이션 유지
 @Target(ElementType.METHOD)         // 메서드에만 적용
@@ -109,7 +109,7 @@ public @interface MyAnnotation {
 }
 
 ```
-```
+```java
 // 어노테이션 정의
 @Retention(RetentionPolicy.RUNTIME)  // 런타임 시점에 어노테이션 유지
 @Target(ElementType.METHOD)         // 메서드에만 적용
