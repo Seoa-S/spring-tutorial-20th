@@ -70,18 +70,23 @@ CEOS 20th BE Study - Spring Tutorial
 ## Bean의 라이프사이클
 
 1. bean 인스턴스화 (instantiation)
+
    spring 컨테이너가 설정 파일(XML, Java config 등) 또는 어노테이션을 기반으로 필요한 bean 생성
 2. 의존성 주입 (Dependency Injection)
+
    bean의 속성 값을 설정하거나, 다른 bean을 주입
 3. 초기화 단계 (Initialization)
+
    bean이 생성되고, 의존성이 주입된 후 bean이 사용될 준비를 하기 위한 초기화 작업이 진행됨
    초기화는 2가지 방식으로 실행됨:
    - initializingBean 인터페이스의 afterPropertiesSet() 메서드 구현
    - XML이나 Java Config에서 init-method 속성을 사용하거나 @PostConstruct 어노테이션을 사용하여 초기화 메서드 정의
 4. Bean 사용 (Bean Usage)
+
    bean이 초기화된 후, 실제 애플리케이션 로직에서 이 bean을 사용하게 됨
    bean이 애플리케이션의 서비스나 비즈니스 로직을 수행하는 데 필요한 작업을 처리
 5. 소멸 단계 (Destruction)
+
    애플리케이션 컨텍스트가 종료되거나 bean이 더 이상 필요하지 않을 때, bean 소멸
    소멸은 2가지 방식으로 실행됨:
    - DisposableBean 인터페이스의 destroy() 메서드 구현
