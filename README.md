@@ -9,7 +9,8 @@ CEOS 20th BE Study - Spring Tutorial
   - 자바 코드를 작성해 객체를 생성할 때, 객체가 필요한 곳에서 직접 생성했었음
     ```public class A {
 	b = new B(); //클래스 A에서 new 키워드로 클래스 B의 객체를 생성
-    }```
+    }
+```
   - 제어의 역전은 외부에서 관리하는 객체를 가져와 사용하는 것
     ```pubic class A {
 	private B b; //코드에서 객체를 생성하지 않음. 어디선가 받아온 객체를 b에 할당
