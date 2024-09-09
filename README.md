@@ -7,21 +7,25 @@ CEOS 20th BE Study - Spring Tutorial
   
   - 객체의 생성과 관리를 개발자가 하는 것이 아니라 프레임워크가 대신하는 것
   - 자바 코드를 작성해 객체를 생성할 때, 객체가 필요한 곳에서 직접 생성했었음
-    ```public class A {
+    ```
+    public class A {
 	b = new B(); //클래스 A에서 new 키워드로 클래스 B의 객체를 생성
     }
-```
+    ```
   - 제어의 역전은 외부에서 관리하는 객체를 가져와 사용하는 것
-    ```pubic class A {
+    ```
+    pubic class A {
 	private B b; //코드에서 객체를 생성하지 않음. 어디선가 받아온 객체를 b에 할당
-    }```
+    }
+    ```
     
 - DI (Dependency Injection)
     
     - 제어의 역전을 구현하기 위해 사용하는 방법
     - 어떤 클래스가 다른 클래스에 의존한다는 뜻
     - 외부에서 객체를 주입받아 사용하는 것
-  ```public class A {
+  ```
+  public class A {
 	//A에서 B를 주입받음
 	@Autowired
 	B b; //B b; 라고 선언했을 뿐 직접 객체를 생성하지 않음. 즉, 객체를 주입받고 있음
@@ -43,7 +47,8 @@ CEOS 20th BE Study - Spring Tutorial
   - e.g. MyBean이라는 클래스에 `@Component` 애너테이션을 붙이면 MyBean 클래스가 빈으로 등록됨 
     
     → 이후 스프링 컨테이너에서 이 클래스를 관리함. 이때 빈의 이름은 클래스명의 첫 글자를 소문자로 바꿔 관리
-  ```@Component
+  ```
+  @Component
   public class MyBean{
   }
   ```
