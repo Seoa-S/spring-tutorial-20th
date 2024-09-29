@@ -1,5 +1,50 @@
-# spring-tutorial-20th
-CEOS 20th BE Study - Spring Tutorial
+# 목차
+[🌳 spring-boot-tutorial-20th](#spring-boot-tutorial-20th)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🌱 Spring Initializer로 프로젝트 시작](#spring-initializer로-프로젝트-시작)
+  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🌱 Application 실행](#application-실행)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🌱 서버 동작 확인]
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🌱 build.gradle 파일 수정]
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🌱 application.yml]
+
+[🌳 스프링의 이해]
+
+&emsp;[🪴 Spring이란?]
+
+&emsp;[🪴 Spring의 특징]
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🌱 POJO]
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🌱 Spring 삼각형]
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🌱 AOP]
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🌱 PSA]
+
+&emsp;[🪴 Spring Boot]
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🌱 Spring Boot]
+
+[🌳 Spring Bean]
+
+&emsp;[🪴Spring Bean]
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🌱 Spring Bean 사용 이유]
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🌱 Spring Bean을 Spring IoC Container에 등록하는 방법]
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[🌱 의존관계 설정]
+
+&emsp;[🪴Bean의 라이프사이클]
+
+[🌳 단위 테스트와 통합 테스트]
+
+
+# 🌳 spring-boot-tutorial-20th
 
 ### 🌱 Spring Initializer로 프로젝트 시작
 
@@ -21,11 +66,10 @@ https://start.spring.io/
 
 → 다운로드 후 파일을 작업하고자 하는 파일에 옮겨넣고, .gitignore 파일을 추가
 
-다운로드한 폴더 안에 있는 파일들 다 밖으로 빼기
+→ 다운로드한 폴더 안에 있는 파일들 다 밖으로 빼기
 
-- .gitignore
-    
-    ```
+→ .gitignore 
+
     *#
     *.iml
     *.ipr
@@ -69,7 +113,6 @@ https://start.spring.io/
     .sts4-cache
     
     .idea
-    ```
     
 
 ### 🌱 Application 실행
@@ -101,13 +144,11 @@ dependencies {
 
 	// 단위 테스트
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
 }
 ```
 
-<aside>
-🤔
-
-**lombok이란?**
+🤔 **lombok이란?**
 
 자바에서 사용되는 라이브러리
 
@@ -130,10 +171,8 @@ dependencies {
     인자가 없는 기본 생성자 및 모든 필드를 인자로 받는 생성자를 자동으로 생성
     
 
-<aside>
-🤔
 
-**보일러플레이트(boilerplate)란?**
+🤔 **보일러플레이트(boilerplate)란?**
 
 반복적인 코드
 
@@ -148,10 +187,9 @@ dependencies {
 
 파일명 변경: `application.properties`  → `application.yml`
 
-<aside>
-🤔
 
-**파일 명을 변경하는 이유**
+🤔 **파일 명을 변경하는 이유**
+
 둘 다 스프링 프레임워크에서 애플리케이션의 설정을 정의하는 데 사용되는 구성 파일
 
 `application.properties` 
@@ -186,7 +224,6 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 ```
 
-</aside>
 
 # 🌳 스프링의 이해
 
@@ -194,16 +231,12 @@ spring:
 
 **자바 엔터프라이즈 개발을 편하게 해주는 오픈소스 경량급 애플리케이션 프레임워크**
 
-<aside>
-🤔
-
-**경량 컨테이너란?**
+🤔 **경량 컨테이너란?**
 
 스프링은 모든 기능을 한꺼번에 제공하는 것이 아닌, 필요한 기능만 가볍게 추가해서 쓸 수 있는 구조로 되어 있음. 다른 복잡한 서버나 프레임워크처럼 모든 걸 포함하는 거대한 시스템이 아닌, 최소한의 리소스로 작동할 수 있도록 가볍게 설계되어 있음 → 경량
 
 스프링은 애플리케이션의 객체들을 관리하는 역할을 함 → 컨테이너
 
-</aside>
 
 ## 🪴 Spring의 특징
 
@@ -256,7 +289,7 @@ Plain Old Java Object. 오래된 방식의 순수한 자바 객체
 
 POJO 프로그램이 가능하도록 기술적인 기반을 제공하는 프레임워크
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/d6cd7a95-d578-4984-bc27-c7e8cb6ebb02/11a4d2eb-f053-4bdb-94d1-7c0201b002c0/image.png)
+![image](https://github.com/user-attachments/assets/8ed69679-8f8b-4de4-aff1-b18d65757260)
 
 스프링은 비즈니스 로직의 복잡함과 엔터프라이즈 기술의 복잡함을 분리해서 구성할 수 있게 도와줌
 
@@ -266,10 +299,7 @@ POJO는 비즈니스 로직을 단순하고 명확하게 표현할 수 있게 �
 
 즉, 분리됐지만 필요한 서비스 기술을 POJO 방식으로 개발된 애플리케이션 핵심 로직을 담은 코드에 제공 
 
-<aside>
-🤔
-
-**비즈니스 로직 vs 엔터프라이즈 기술**
+🤔 **비즈니스 로직 vs 엔터프라이즈 기술**
 
 비즈니스 로직
 
@@ -312,17 +342,16 @@ public class BankService {
 
 → 비즈니스 로직인 *돈을 이체하는 로직* 에 집중할 수 있게 되어 있음. 데베 연결이나 트랜젝션 관리는  `@Transactional` 등의 어노테이션을 통해 스프링이 알아서 처리해주기 때문에, 개발자는 그런 복잡한 기술적 문제를 걱정하지 않아도 됨
 
-</aside>
 
 ### 🌱 Spring 삼각형
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/d6cd7a95-d578-4984-bc27-c7e8cb6ebb02/46b965f6-ee6c-466a-9586-d7f904662264/image.png)
+![image](https://github.com/user-attachments/assets/d21ed093-6b73-4540-8e7b-31cb39c68dd1)
 
 **의존성이란**
 
 전체는 부분에 의존한다
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/d6cd7a95-d578-4984-bc27-c7e8cb6ebb02/3144c150-45f2-4ff7-a1aa-8e4e9bac2160/image.png)
+![image](https://github.com/user-attachments/assets/09c1de56-bde1-4e0a-b211-d5157c90645b)
 
 전체: Car
 
@@ -385,111 +414,113 @@ public class Car {
 
 **의존성 주입 방법**
 
-생성자 주입
+`@Autowired`를 사용해 의존성을 주입하는 3가지 방법이 있음
 
-생성자의 인자로 tire를 받기
+- 생성자 주입(Constructor Injection)
 
-```java
-public class Car {
+	생성자의 인자로 tire를 받기
 
-	Tire tire;
-
-	public Car(Tire tire) {
-		this.tire = tire;
+	```java
+	public class Car {
+	
+		Tire tire;
+	
+		public Car(Tire tire) {
+			this.tire = tire;
+		}
+	
 	}
+	```
+	
+	외부에서 Car의 tire 의존성을 주입해줌
+	
+	```java
+	Tire tire = new KoreaTire();
+	
+	Car car = new Car(tire); // 생성자 주입
+	```
+	
+	→ Car 입장에서는 어떤 Tire를 장착할 지 고민하지 않아도 됨
+	
+	→ Car 클래스와 Tire 클래스의 결합이 느슨해짐
 
-}
-```
+- setter 주입(Setter Injection / 속성을 통한 의존성 주입)
 
-외부에서 Car의 tire 의존성을 주입해줌
+	setter에서 tire를 받아 tire 필드를 정함
 
-```java
-Tire tire = new KoreaTire();
-
-Car car = new Car(tire); // 생성자 주입
-```
-
-→ Car 입장에서는 어떤 Tire를 장착할 지 고민하지 않아도 됨
-
-→ Car 클래스와 Tire 클래스의 결합이 느슨해짐
-
-setter 주입(속성을 통한 의존성 주입)
-
-setter에서 tire를 받아 tire 필드를 정함
-
-```java
-public class Car {
-
-	Tire tire;
-
-	public void setTire(Tire tire) {
-		this.tire = tire
+	```java
+	public class Car {
+	
+		Tire tire;
+	
+		public void setTire(Tire tire) {
+			this.tire = tire
+		}
+	
 	}
+	```
+	
+	```java
+	Tire tire = new KoreaTire();
+	
+	Car car = new Car();
+	
+	car.setTire(tire); // setter 주입
+	```
 
-}
-```
+- 필드 주입 (Field Injection)
 
-```java
-Tire tire = new KoreaTire();
-
-Car car = new Car();
-
-car.setTire(tire); // setter 주입
-```
-
-필드 주입
-
-```java
-import org.springframework.beans.factory.annotation.Autowired;
-
-public class Car {
-
-	@Autowired
-	Tire tire;
-
-}
-```
-
-```java
-import org.springframework.stereotype.Component;
-
-@Bean
-public class KoreaTire implements Tire {
-    // ...
-}
-```
-
-- `@Bean` 같은 어노테이션을 사용하면 Bean에 Tire가 등록됨
-- `@Autowired` : 스프링이 해당 필드에 필요한 객체를 자동으로 주입
-- 필드 주입은 한 번 주입된 의존성을 변경하지 않고 유지하는 경우에 적합
-    
-    cf) `@Qualifier` 를 사용하면 직접 Bean을 선택할 수 있긴 함
-    
-    ```java
-    @Service
-    public class CreditCardPaymentService implements PaymentService {
-        // 구현 내용
-    }
-    
-    @Service
-    public class PayPalPaymentService implements PaymentService {
-        // 구현 내용
-    }
-    ```
-    
-    ```java
-    @Service
-    public class OrderService {
-    
-        @Autowired
-        @Qualifier("creditCardPaymentService")  // 특정 빈 선택
-        private PaymentService paymentService;
-    
-        public void processOrder() {
-            paymentService.processPayment();
-        }
-    }
-    ```
+	```java
+	import org.springframework.beans.factory.annotation.Autowired;
+	
+	public class Car {
+	
+		@Autowired
+		Tire tire;
+	
+	}
+	```
+	
+	```java
+	import org.springframework.stereotype.Component;
+	
+	@Bean
+	public class KoreaTire implements Tire {
+	    // ...
+	}
+	```
+	
+	- `@Bean` 같은 어노테이션을 사용하면 Bean에 Tire가 등록됨
+	- `@Autowired` : 스프링이 해당 필드에 필요한 객체를 자동으로 주입
+	- 필드 주입은 한 번 주입된 의존성을 변경하지 않고 유지하는 경우에 적합
+	    
+	    cf) `@Qualifier` 를 사용하면 직접 Bean을 선택할 수 있긴 함
+	    
+	    ```java
+	    @Service
+	    public class CreditCardPaymentService implements PaymentService {
+	        // 구현 내용
+	    }
+	    
+	    @Service
+	    public class PayPalPaymentService implements PaymentService {
+	        // 구현 내용
+	    }
+	    ```
+	    
+	    ```java
+	    @Service
+	    public class OrderService {
+	    
+	        @Autowired
+	        @Qualifier("creditCardPaymentService")  // 특정 빈 선택
+	        private PaymentService paymentService;
+	    
+	        public void processOrder() {
+	            paymentService.processPayment();
+	        }
+	    }
+	    ```
     
 
 **IoC (Inversion of Control / 제어의 역전)**
@@ -514,16 +545,12 @@ Spring IoC 컨테이너의 역할
     
     IoC 컨테이너는 빈의 라이프사이클을 관리하며, 초기화와 소멸 시점에서 콜백 메서드를 호출할 수 있음
     
-    <aside>
-    🤔
-    
-    **콜백 메서드**
+    🤔 **콜백 메서드**
     
     미리 정의해놓고, 나중에 측정 상황이 발생하면 실행되는 메서드
     
     e.g. 버튼 클릭 → 버튼 클릭이라는 이벤트가 발생하면 콜백 메서드가 자동으로 실행
     
-    </aside>
     
     e.g. 빈 초기화 시 특정 설정을 수행하거나, 빈 소멸 시 리소스를 정리하기 등
     
@@ -548,7 +575,8 @@ IoC vs DI
     - 핵심 관심사: 각 모듈 별 핵심 로직
     - 횡단 관심사(cross-cutting concern): 여러 모듈에 공통적으로 나타나는 로직
     
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/d6cd7a95-d578-4984-bc27-c7e8cb6ebb02/0026e317-0a77-45d7-ac4b-abf152b231c0/image.png)
+    ![image](https://github.com/user-attachments/assets/c9ea0e18-2142-45f3-bb16-f66d86b3c686)
+
     
 - 메서드에 로직을 주입할 수 있는 곳
     - Around
@@ -557,7 +585,8 @@ IoC vs DI
     - AfterReturning
     - AfterThrowing
     
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/d6cd7a95-d578-4984-bc27-c7e8cb6ebb02/cea97ce3-50cd-4574-a44c-3c6fc2304a0a/image.png)
+    ![image](https://github.com/user-attachments/assets/2a3dc7ab-df00-4679-afd3-61516ed4d2da)
+
     
 
 ### 🌱 PSA
@@ -566,10 +595,7 @@ IoC vs DI
 
 - 어댑터 패턴을 적용해서 같은 일을 하는 다수의 기술을 공통의 인터페이스로 제어할 수 있게 한 것
     
-    <aside>
-    🤔
-    
-    **어댑터 패턴**
+    🤔 **어댑터 패턴**
     
     디자인 패턴 중 하나로, 서로 호환되지 않는 인터페이스를 가진 클래스들이 함께 작동할 수 있도록 중간에 어댑터를 두어 연결해 주는 방식
     
@@ -669,7 +695,7 @@ IoC vs DI
     Invalid media type: avi
     ```
     
-    </aside>
+    
     
 - 예를 들어 MySQL, PostgreSQL 등 다른 기술들을 사용하더라도 JDBC 라는 공통의 표준 스펙(인터페이스)을 통해서 공통된 방식으로 코드를 작성할 수 있음
 - `@Transactional` 은 JPA, JDBC**를**  사용하든 변경없이 사용 가능함
@@ -713,6 +739,308 @@ IoC vs DI
     - 메모리 사용량, 가비지 컬렉션, 웹 요청, 데이터 소스 사용량 등 다양한 메트릭
 
 # 🌳 Spring Bean
+
+## 🪴Spring Bean
+
+**스프링 IoC 컨테이너가 관리하는 자바 객체**
+
+스프링에서는 직접 new를 이용하여 생성한 객체가 아니라, 필요한 객체를 생성하고 생성한 객체에 의존을 주입 → 스프링에 의해 생성되고 관리되는 자바 객체가 Bean
+
+### 🌱 Spring Bean 사용 이유
+
+스프링에서는 각각의 자바 클래스들이 의존관계를 가지고 있음
+
+
+💡 **MVC 패턴 (Model-View-Controller)**
+
+애플리케이션을 3가지 역할로 나눠 설계하는 구조를 의미
+
+1. **Model 클래스** 만들기
+    
+    핵심 데이터와 그 데이터를 처리하는 로직을 즉, 구조를 정의하는 클래스
+    
+    데이터 → 데이터베이스에 저장되는 객체(Entity)
+    
+    ```java
+    public class User {
+    	private Long id;
+    	private String name;
+    	private String email;
+    }
+    ```
+    
+2. Model 객체를 담는 **Repository 클래스** 구현하기
+    
+    Model 객체를 데이터베이스에 저장하거나 조회하는 역할
+    
+    즉, Model과 데이터베이스 사이에서 CRUD 작업을 처리하는 클래스
+    
+    스프링에서는 JpaRepository를 사용해 기본적인 데베 작업을 자동으로 처리할 수 있음
+    
+    ```java
+    import org.springframework.data.jpa.repository.JpaRepository;
+    
+    public interface UserRepository extends JpaRepository<User, Long> {
+    	User findByEmail(String email);
+    }
+    ```
+    
+3. Repository에 인덱싱하기 위한 **Service 클래스** 만들기
+    
+    비즈니스 로직을 처리하는 계층
+    
+    
+    🤔 **비즈니스 로직**
+    
+    애플리케이션의 핵심 기능을 처리하는 규칙이나 알고리즘
+    
+    사용자의 요청이 들어왔을 때 이를 어떻게 처리할지를 결정하는 단계
+    
+    e.g. 사용자가 회원가입을 할 때 이메일 중복 확인, 비밀번호 암호화 등
+    
+   
+    
+    주로 Repository를 통해 데이터를 가져오고 처리한 뒤 Controller에게 전달
+    
+    ```java
+    // 이메일로 사용자를 조회하거나 새 사용자를 생성하는 비즈니스 로직 처리
+    @Service
+    public class UserService {
+    
+        private final UserRepository userRepository;
+    
+        @Autowired
+        public UserService(UserRepository userRepository) {
+            this.userRepository = userRepository;
+        }
+    
+        public User getUserByEmail(String email) {
+            return userRepository.findByEmail(email);
+        }
+    
+        public User createUser(User user) {
+            return userRepository.save(user);
+        }
+    }
+    
+    ```
+    
+4. Service를 통해 Model이 담겨 있는 Repository에 접근하기 위한 **Controller 클래스**
+    
+    사용자의 요청을 받아서 처리하고, 그 결과를 반환하는 역할
+    
+    주로 웹 요청을 처리하는 계층으로, Service를 통해 필요한 데이터를 조회하고, 그 결과를 사용자에서 반환하는 역할
+    
+    HTTP 요청/응답을 처리하는 역할
+    
+    ```java
+    import org.springframework.web.bind.annotation.*;
+    
+    @RestController
+    @RequestMapping("/users")
+    public class UserController {
+    
+        private final UserService userService;
+    
+        @Autowired
+        public UserController(UserService userService) {
+            this.userService = userService;
+        }
+    
+        @GetMapping("/{email}")
+        public User getUserByEmail(@PathVariable String email) {
+            return userService.getUserByEmail(email);
+        }
+    
+        @PostMapping
+        public User createUser(@RequestBody User user) {
+            return userService.createUser(user);
+        }
+    }
+    ```
+    
+
+e.g. 사용자가 브라우저에서 *사용자 정보 조회* 요청을 보냄
+
+→ Controller는 그 요청을 받아 어떤 작업이 필요한지 결정한 후 Service로 요청 전달
+
+```java
+@GetMapping("/{email}")
+public User getUserByEmail(@PathVariable String email) {
+    return userService.getUserByEmail(email);  // Service 호출
+}
+```
+
+→ Service는 비즈니스 로직을 처리하면서 Repository를 호출해 데베에 해당 정보를 조회
+
+```java
+public User getUserByEmail(String email) {
+    // 1. 이메일 형식이 유효한지 검증하는 비즈니스 로직
+    if (!email.contains("@")) {
+        throw new IllegalArgumentException("Invalid email format");
+    }
+    
+    // 2. Repository를 통해 데이터베이스에서 사용자 정보를 조회
+    return userRepository.findByEmail(email)
+        .orElseThrow(() -> new RuntimeException("User not found"));
+}
+```
+
+→ Repository는 Model 객체로 데이터를 반환
+
+요청된 이메일에 해당하는 사용자를 조회하는 작업
+
+```java
+public interface UserRepository extends JpaRepository<User, Long> {
+    Optional<User> findByEmail(String email);  // 이메일로 사용자 찾기
+}
+```
+
+→ 이를 Service가 받아 다시 Controller에 전달
+
+→ Controller는 그 데이터를 사용자에게 응답으로 반환
+
+</aside>
+
+웹 프로그래밍은 멀티유저에 대한 동시성 제어가 중요 → 스프링 컨테이너에서는 싱글톤 패턴으로 관리 → 빈이 다 해줌
+
+
+🤔 **싱글톤 패턴 (Singleton Pattern)**
+
+객체의 인스턴스가 오직 1개만 생성되는 패턴
+
+
+🤔 **클래스 vs 인스턴스**
+
+클래스(class)
+
+설계도 e.g. 자동차의 속성(색상, 모델, 연료 종류 등)과 기능(가속, 정지, 방향 전환 등)을 정의한 것
+
+인스턴스(instance)
+
+실질적인 자동차
+
+
+생성자가 여러 차례 호출되어도 실제로 생성되는 객체는 하나이며 이후에 호출된 생성자는 최초의 생성자가 처음에 만들어진 객체를 리턴하는 것
+
+
+### 🌱 Spring Bean을 Spring IoC Container에 등록하는 방법
+
+**자바 어노테이션(Java Annotation) 사용하기**
+
+- `@ComponentScan`
+    
+    어느 지점부터 컨포넌트를 찾으라고 알려주는 역할
+    
+    `@ComponentScan` 이 붙어있는 클래스가 있는 패키지에서부터 모든 하위 패키지의 모든 클래스를 훑어보며 `@Component` 가 붙은 클래스를 찾음
+    
+- `@Component`
+    
+    자동으로 스프링 빈으로 등록됨
+    
+    `@Controller` `@Service` `@Repository` 들은 `@Component` 를 포함하고 있음
+    
+
+**빈 설정파일(Bean Configuration File)에 직접 Bean 등록하는 방법**
+
+자바 클래스를 생성해서 작성 가능
+
+`@Configuration` 안에 `@Component`를 사용하기 때문에 `@ComponentScan`의 스캔 대상이 됨
+
+이에 빈 설정 파일이 읽힐 때 그 안에 정의된 빈들이 IoC 컨테이너에 등록됨
+
+```java
+@Configuration
+public class SpringConfig {
+
+	@Bean
+    public MemberService memberService() {
+    	return new MemberService();
+    }
+}
+```
+
+### 🌱 의존관계 설정
+
+스프링 빈을 등록한다고 해서 의존관계가 설정되는 것은 아님
+
+싱글톤 객체로 생성되어 관리되는 클래스들의 의존관계를 설정해줘야 함
+
+**자동 의존관계**
+
+`@ComponentScan` 을 통해 스프링 빈을 등록했을 경우, 클래스 생성자에 `@Autowired`를 명시해주면 자동으로 스프링이 의존성을 주입해줌
+
+```java
+@Service
+public class MemberService {
+
+	private final MemberRepository memberRepository;
+    
+    @Autowired
+    public MemberService(MemberRepository memberRepository) {
+    	this.memberRepostiory = memberRepository;
+    }
+    
+    //이후 서비스 관련 코드
+    ...
+}
+```
+
+**수동 의존관계**
+
+Configuration을 통해 직접 빈을 등록할 경우, 실제 클래스의 구현된 생성자의 형태와 동일하게 Configuration에서도 객체를 리턴해주면 됨
+
+```java
+@Configuration
+public class SpringConfig {
+
+	@Bean
+    public MemberService memberService() {
+    	return new MemberService(memberRepository());
+    }
+    
+    @Bean
+    public MemberRepository memberRepostiory() {
+    	return new MemberRepository();
+    }
+}
+```
+
+## 🪴Bean의 라이프사이클
+
+스프링 컨테이너에 의해 관리되는 객체가 생성되고 소멸되기까지의 전체 과정
+
+1. 스프링 컨테이너 초기화
+    
+    스프링 애플리케이션이 시작되면, 스프링 컨테이너가 설정 파일(applicationContext.xml, @Configuration 클래스 등)을 읽고 빈 설정을 로드
+    
+2. 빈 인스턴스 생성
+    
+    @Bean 또는 XML 설정에 정의된 대로 빈을 생성
+    
+    빈은 싱글톤 스코프가 기본이므로, 각 빈에 대해 하나의 인스턴스만 생성
+    
+3. 의존성 주입(DI)
+    
+    스프링은 빈의 생성자, 필드, setter 메서드를 사용해 의존성을 주입
+    
+    이때 @Autowired 또는 XML에서 정의된 의존성이 주입됨
+    
+4. 빈 초기화(Initializing)
+    
+    빈이 생성되고 의존성이 주입된 후, 초기화 작업이 필요하면 이를 수행
+    
+    - `@PostConstruct`: 빈 초기화 직전에 호출되는 메서드를 정의
+    - `InitializingBean` 인터페이스: `afterPropertiesSet()` 메서드를 구현
+    - XML 또는 `@Bean` 설정: `init-method` 속성을 사용하여 초기화 메서드를 설정
+5. 빈 사용
+6. 빈 소멸(Destroying)
+    
+    애플리케이션이 종료되거나 스프링 컨테이너가 종료될 때, 빈이 소멸됨
+    
+    - `@PreDestroy`: 빈 소멸 직전에 호출되는 메서드를 정의
+    - `DisposableBean` 인터페이스: `destroy()` 메서드를 구현
+    - XML 또는 `@Bean` 설정: `destroy-method` 속성을 사용하여 소멸 메서드를 설정
 
 # 🌳 단위 테스트와 통합 테스트
 
